@@ -25,14 +25,14 @@
               <button
                 type="button"
                 class="plus rounded"
-                @click="handleAddToCart"
+                @click="handleAddToCart(variant.id)"
               >
                 +
               </button>
               <button
                 type="button"
                 class="minus rounded"
-                @click="handleRemoveFromCart"
+                @click="handleRemoveFromCart(variant.id)"
               >
                 -
               </button>
@@ -55,20 +55,29 @@
     </div>
 
     <!-- modal start -->
-    <!-- <order-form
+    <OrderForm
       :cart="cart"
       v-if="showModal"
       @toggle-order-form="toggleModal"
-      @clear-cart="clearCart"
+      @clear-cart="$emit('clear-cart')"
       :total="total"
-    ></order-form> -->
+    ></OrderForm>
     <!-- modal end -->
   </div>
 </template>
 
 <script>
+import OrderForm from "./OrderForm.vue";
 export default {
   name: "Builder",
+  components: {
+    OrderForm,
+  },
+  data() {
+    return {
+      showModal: false,
+    };
+  },
   props: {
     cart: {
       type: Array,
@@ -84,11 +93,14 @@ export default {
     },
   },
   methods: {
-    handleAddToCart() {
-      this.$emit("add-to-cart");
+    handleAddToCart(variantId) {
+      this.$emit("add-to-cart", variantId);
     },
-    handleRemoveFromCart() {
-      this.$emit("remove-from-cart");
+    handleRemoveFromCart(variantId) {
+      this.$emit("remove-from-cart", variantId);
+    },
+    toggleModal() {
+      this.showModal = !this.showModal;
     },
   },
 };

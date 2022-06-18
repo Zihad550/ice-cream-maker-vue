@@ -3,11 +3,14 @@
   <div class="mainBody" id="body">
     <div class="container" id="iceCreamBuilder">
       <IceCream :cart="cart" />
+      <!-- v-bind:cart = :cart -->
       <Builder
         :cart="cart"
         :variants="variants"
         :total="total"
         @add-to-cart="addToCart"
+        @remove-from-cart="removeFromCart"
+        @clear-cart="clearCart"
       />
     </div>
   </div>
@@ -67,6 +70,9 @@ export default {
       );
       if (position < 0) return;
       this.cart.splice(position, 1);
+    },
+    clearCart() {
+      this.cart = [];
     },
   },
 

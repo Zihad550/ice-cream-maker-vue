@@ -14,10 +14,12 @@
       />
     </div>
   </div>
+  <Footer />
 </template>
 
 <script>
 import Builder from "./components/Builder.vue";
+import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
 import IceCream from "./components/IceCream.vue";
 export default {
@@ -26,6 +28,7 @@ export default {
     Header,
     IceCream,
     Builder,
+    Footer,
   },
   data() {
     return {

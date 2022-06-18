@@ -1,19 +1,7 @@
-# ice-cream-app-cli
+# Ice cream maker app
 
-## Project setup
-```
-yarn install
-```
+Live website [Ice Cream Maker](https://ice-cream-maker122.netlify.app)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Technologies used
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Vue.js

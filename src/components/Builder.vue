@@ -1,5 +1,5 @@
 <template>
-  <div class="react" id="builder">
+  <div id="builder">
     <div class="builder">
       <h3>
         Build your cool Ice Cream
@@ -105,3 +105,61 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+/* builder */
+.builder {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+}
+/* totalPrice */
+.total {
+  border-top: 1px solid #5250507e;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* Item */
+
+.item {
+  height: 40px;
+  text-align: left;
+  clear: both;
+  padding: 0;
+  line-height: 40px;
+}
+
+.quantity {
+  color: #5250507e;
+}
+
+.quantity::after {
+  content: ")";
+}
+
+.quantity::before {
+  content: "(";
+}
+
+.plus {
+  width: 30px;
+  background: #28a745;
+  border: 0px;
+  color: white;
+  padding: 5px;
+}
+
+.minus {
+  width: 30px;
+  background: red;
+  border: 0px;
+  color: white;
+  padding: 5px;
+  margin-left: 5px;
+}
+</style>
